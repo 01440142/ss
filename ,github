@@ -1,11 +1,9 @@
-#!/bin/sh
+#!/bin/sh -e
 
 d=~/code/
-r='cc df lb kc kk ss'
-
 mkdir -p $d
-for i in $r; do
+for i in 'cssc dotfiles kakc knking notes scripts'
+do
     [ -d $d$i/ ] && break
-    printf 'Cloning %s...\n' $i
-    git clone -q git@github.com:01440142/$i.git $d$i/
+    git clone git@github.com:01440142/$i.git $d$i/
 done
